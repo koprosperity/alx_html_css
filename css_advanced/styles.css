@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background: url('Object.png');
+    color: white;
+    padding: 50px 0;
+    text-align: auto;
+    
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+}
+
+nav img {
+    width: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.hero-section button {
+    background-color: #ff67ff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+/* Profiles Section */
+.profiles {
+    background-color: none;
+    padding: 50px 0;
+    color: white;
+}
+
+.profiles h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.profile-cards {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.profile-cards div {
+    width: 200px;
+}
+
+.profile-cards img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-cards h3 {
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+/* Testimonial Section */
+.testimonial {
+    background-color: #d4a8ff;
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+
+.testimonial img {
+    width: 100px;
+    border-radius: 50%;
+    float: left;
+    display: inline block;
+}
+
+.testimonial blockquote {
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial h3 {
+    font-size: 1.3em;
+}
+
+/* Tutorials Section */
+.tutorials {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.tutorials h2 {
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.tutorial-cards {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tutorial-cards div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-cards img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.tutorial-cards h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.tutorial-cards .rating {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.tutorial-cards .rating i {
+    color: #ff67ff;
+    margin: 0 5px;
+}
+
+.tutorial-cards p {
+    color: #888;
+}
+
+/* Free Membership Section */
+.membership {
+    background-color: #151a21;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.membership h2 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.membership .cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.membership .cards div {
+    width: 200px;
+    text-align: center;
+}
+
+.membership .cards img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+.membership .cards h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* FAQ Section */
+/* General styling for the FAQ section */
+.faq {
+    text-align: center;
+    padding: 50px;
+}
+
+.faq h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Styling for the FAQ items */
+/* General styling for the FAQ section */
+.faq {
+    text-align: center;
+    padding: 50px;
+}
+
+.faq h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Styling for the FAQ items */
+.faq-questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 30px; /* Spacing between FAQ items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Ensure only two columns */
+.faq-questions div {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 300px; /* Prevent shrinking of columns */
+}
+
+.faq-questions h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.faq-questions p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Add a media query for smaller screens */
+@media (max-width: 768px) {
+    .faq-questions {
+        grid-template-columns: 1fr; /* On small screens, switch to one column */
+    }
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #080031;
+    color: white;
+    padding: 80px;
+    text-align: center;
+}
+
+footer img {
+    width: 150px;
+    margin-bottom: auto;
+    float: left;
+    padding: auto;
+}
+
+footer p {
+    color: #888;
+}
+
+footer .social-icons i {
+    color: black;
+    margin: 0 30px;
+    cursor: pointer;
+    float: right;
+    border-radius: 80px;
+    font-size: 30px;
+    background-color: white;
+}
