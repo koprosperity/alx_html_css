@@ -13,7 +13,7 @@ header {
     color: white;
     padding: 50px 0;
     text-align: auto;
-    
+
 }
 
 nav {
@@ -123,58 +123,138 @@ nav ul li a {
     font-size: 1.3em;
 }
 
-/* Tutorials Section */
+/* image container secton */
+.image-container {
+    position: relative;
+    width: 500px;
+    height: auto;
+}
+
+/* General styling for the tutorials section */
 .tutorials {
-    background-color: #f4f4f4;
-    padding: 50px 0;
+    padding: 50px 20px;
     text-align: center;
+    background-color: #f8f9fa;
+    /* Light background for the section */
 }
 
 .tutorials h2 {
-    margin-bottom: 40px;
-    font-size: 2.5em;
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 400;
 }
 
+/* Tutorial cards container */
 .tutorial-cards {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Create 4 columns */
+    gap: 20px;
+    /* Space between the cards */
     max-width: 1200px;
     margin: 0 auto;
+    /* Center the grid */
 }
 
+/* Individual tutorial cards */
 .tutorial-cards div {
-    background-color: white;
-    padding: 20px;
+    position: relative;
+    background-color: #fff;
     border-radius: 10px;
-    width: 220px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+    text-align: center;
+    /* Center the content */
 }
 
+/* Style the main images */
+.tutorial-cards div img:first-of-type {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    display: block;
+}
+
+/* Style for the Play button - position it absolutely over the image */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    /* Adjust size of the play button */
+    height: 50px;
+    opacity: 0.8;
+    /* Slight transparency */
+    cursor: pointer;
+    /* Show pointer on hover */
+    transition: opacity 0.3s ease;
+}
+
+/* Make play button more visible on hover */
+.tutorial-cards div:hover .play-btn {
+    opacity: 1;
+}
+
+.tutorial-cards div:hover {
+    transform: translateY(-10px);
+    /* Slight hover effect */
+}
+
+/* Images inside the cards */
 .tutorial-cards img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
+/* Card title */
 .tutorial-cards h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    color: #333;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
-.tutorial-cards .rating {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0;
-}
-
-.tutorial-cards .rating i {
-    color: #ff67ff;
-    margin: 0 5px;
-}
-
+/* Card description */
 .tutorial-cards p {
-    color: #888;
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 15px;
 }
+
+/* Rating section inside the cards */
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Space between stars */
+}
+
+.rating i {
+    color: #ff67ff;
+    /* Purple-colored stars */
+    font-size: 1.2em;
+}
+
+/* Responsiveness: For smaller screens */
+@media (max-width: 768px) {
+    .tutorial-cards {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .tutorial-cards {
+        grid-template-columns: 1fr;
+        /* 1 column on mobile */
+    }
+}
+
+
 
 /* Free Membership Section */
 .membership {
@@ -238,22 +318,41 @@ nav ul li a {
     letter-spacing: 2px;
 }
 
-/* Styling for the FAQ items */
-.faq-questions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
-    gap: 30px; /* Spacing between FAQ items */
-    max-width: 1200px;
-    margin: 0 auto;
+/* Adjust the FAQ items to 2 columns and 2 rows */
+/* General styling for the FAQ section */
+.faq {
+    text-align: center;
+    padding: 50px;
 }
 
-/* Ensure only two columns */
+.faq h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Use flexbox to achieve the 2 columns layout */
+.faq-questions {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping to multiple rows */
+    justify-content: space-between;
+    /* Distribute space between items */
+    max-width: 1000px;
+    /* Restrict container width */
+    margin: 0 auto;
+    /* Center the container */
+}
+
+/* Set each item to take up 48% of the container's width */
 .faq-questions div {
-    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 300px; /* Prevent shrinking of columns */
+    /* Rounded corners */
+    width: 48%;
+    /* Ensure two items per row by setting width */
+    margin-bottom: 20px;
+    /* Add spacing between rows */
 }
 
 .faq-questions h3 {
@@ -265,16 +364,20 @@ nav ul li a {
     font-size: 1em;
     color: #666;
     line-height: 1.6;
-}
-
-/* Add a media query for smaller screens */
-@media (max-width: 768px) {
-    .faq-questions {
-        grid-template-columns: 1fr; /* On small screens, switch to one column */
-    }
+    text-align: left;
 }
 
 
+.faq-questions h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.faq-questions p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
 
 /* Footer */
 footer {
@@ -297,10 +400,10 @@ footer p {
 
 footer .social-icons i {
     color: black;
-    margin: 0 30px;
+    margin: 0 40px;
     cursor: pointer;
     float: right;
-    border-radius: 80px;
+    border-radius: 100px;
     font-size: 30px;
     background-color: white;
 }
