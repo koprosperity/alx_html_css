@@ -9,17 +9,22 @@ body {
 }
 
 header {
-    background: url('Object.png');
+    background: url('Object.png') no-repeat center center;
+    background-size: cover;
     color: white;
     padding: 50px 0;
     text-align: auto;
-
+    min-height: 100vh;
 }
+
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 0 50px;
+    align-items: center;
+    padding: 20px;
+    z-index: 10; /* Makes sure the nav stays visible */
+    position: relative;
 }
 
 nav img {
@@ -41,7 +46,7 @@ nav ul li a {
 /* Hero Section */
 .hero-section {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 90px;
     color: white;
 }
 
