@@ -164,6 +164,47 @@ body {
     color: #000000;
 }
 
+/* Fade-in animation for the items when the page loads */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.what-we-do-item {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Apply scaling and rotation on hover */
+.what-we-do-item:hover {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+/* Staggered fade-in effect */
+.what-we-do-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.what-we-do-item:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.what-we-do-item:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.what-we-do-item:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
 /* Feature styling */
 .features {
     display: flex;
@@ -280,6 +321,33 @@ body {
     .pentagon {
         margin-bottom: 20px;
     }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Scaling effect on hover */
+.result-item:hover {
+    animation: bounce 1s;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
 }
 
 
